@@ -2,14 +2,214 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pizza app</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Kanit:wght@300;400&family=Lato&family=Permanent+Marker&family=Unbounded:wght@300;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Pizza ordering app</title>
   </head>
   <body>
-    <div id="app">
-      <h1>Pizza app</h1>
+    <div class="container">
+      <header>
+        <h1>Welcome to our pizza world</h1>
+        <div class="price">Price</div>
+      </header>
+
+      <main>
+        <!-- pizza size - radio buttons -->
+
+        <form class="orderSection">
+          <fieldset>
+            <legend>Please select preferred pizza size:</legend>
+            <div class="orderChoices">
+              <span>
+                <input
+                  class="size"
+                  type="radio"
+                  id="sizeFor2"
+                  value="serve2"
+                  name="pizzaSize"
+                />
+                <label for="sizeFor2">Serving portion for 2</label>
+              </span>
+
+              <span>
+                <input
+                  class="size"
+                  type="radio"
+                  id="sizeFor4"
+                  value="serve4"
+                  name="pizzaSize"
+                />
+                <label for="sizeFor4">Serving portion for 4</label>
+              </span>
+
+              <span>
+                <input
+                  class="size"
+                  type="radio"
+                  id="sizeFor6"
+                  value="serve6"
+                  name="pizzaSize"
+                />
+                <label for="sizeFor6">Serving portion for 6</label>
+              </span>
+
+              <span>
+                <input
+                  class="size"
+                  type="radio"
+                  id="sizeFor8"
+                  value="serve8"
+                  name="pizzaSize"
+                />
+                <label for="sizeFor8">Serving portion for 8</label>
+              </span>
+            </div>
+          </fieldset>
+        </form>
+
+        <!-- pizza toppings - Checkboxes -->
+
+        <form class="orderSection">
+          <fieldset>
+            <legend>Please select preferred pizza toppings:</legend>
+            <div class="orderChoices">
+              <span>
+                <input
+                  class="topping"
+                  type="checkbox"
+                  id="topCheese"
+                  name="topping"
+                  value="extraCheese"
+                />
+                <label for="topCheese">Extra cheese</label>
+              </span>
+
+              <span>
+                <input
+                  class="topping"
+                  type="checkbox"
+                  id="topSausage"
+                  name="topping"
+                  value="sausage"
+                />
+                <label for="topSausage">Sausage</label>
+              </span>
+
+              <span>
+                <input
+                  class="topping"
+                  type="checkbox"
+                  id="topOnion"
+                  name="topping"
+                  value="onion"
+                />
+                <label for="topOnion">Onion</label>
+              </span>
+
+              <span>
+                <input
+                  class="topping"
+                  type="checkbox"
+                  id="topOlives"
+                  name="topping"
+                  value="olives"
+                />
+                <label for="topOlives">Olives</label>
+              </span>
+
+              <span>
+                <input
+                  class="topping"
+                  type="checkbox"
+                  id="topPepper"
+                  name="topping"
+                  value="greenPepper"
+                />
+                <label for="topPepper">Green pepper</label>
+              </span>
+
+              <span>
+                <input
+                  class="topping"
+                  type="checkbox"
+                  id="topGarlic"
+                  name="topping"
+                  value="garlic"
+                />
+                <label for="topGarlic">Garlic</label>
+              </span>
+
+              <span>
+                <input
+                  class="topping"
+                  type="checkbox"
+                  id="topTomato"
+                  name="topping"
+                  value="tomato"
+                />
+                <label for="topTomato">Tomato</label>
+              </span>
+
+              <span>
+                <input
+                  class="topping"
+                  type="checkbox"
+                  id="topBasil"
+                  name="topping"
+                  value="basil"
+                />
+                <label for="topBasil">Basil</label>
+              </span>
+
+              <span>
+                <input
+                  class="topping"
+                  type="checkbox"
+                  id="topMushrooms"
+                  name="topping"
+                  value="mushrooms"
+                />
+                <label for="topMushrooms">Mushrooms</label>
+              </span>
+
+              <span>
+                <input
+                  class="topping"
+                  type="checkbox"
+                  id="topPineapple"
+                  name="topping"
+                  value="pineapple"
+                />
+                <label for="topPineapple">Pineapple</label>
+              </span>
+            </div>
+          </fieldset>
+        </form>
+
+        <!-- deliver options - dropdown menu -->
+
+        <form class="orderSection">
+          <fieldset class="orderChoices">
+            <legend>Please select preferred way of delivery:</legend>
+            <select
+              class="deliveryOptions"
+              name="deliverMethod"
+              id="select"
+              required
+            >
+              <option selected disabled value="empty">Choose one</option>
+              <option value="home">Home delivery</option>
+              <option value="restaurant">Eat in a restaurant</option>
+              <option value="pickup">Pickup at a restaurant</option>
+            </select>
+          </fieldset>
+        </form>
+      </main>
     </div>
-    <script type="module" src="/src/main.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>
