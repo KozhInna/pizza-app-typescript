@@ -56,3 +56,22 @@ toppings.forEach((topping) => {
     }
   });
 });
+
+
+const delivery =
+  document.getElementById("select") as HTMLInputElement;
+
+  delivery.addEventListener('change', () => {
+    if(delivery.value === 'home'){
+      deliveryCost = 5;
+    } else {
+      deliveryCost = 0;
+    }
+    totalCost = pricePerSize + toppingCost + deliveryCost;
+
+    if (price !== null) {
+      price.textContent = String(totalCost) + " €";
+    };
+  });
+    
+    
