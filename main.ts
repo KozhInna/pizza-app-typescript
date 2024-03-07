@@ -74,4 +74,41 @@ const delivery =
     };
   });
     
-    
+  
+
+const submitBtn: HTMLButtonElement | null = document.getElementById("submitBtn") as HTMLButtonElement | null;
+
+function handleSubmit(event: Event) {
+  event.preventDefault();
+
+  const selectedSizeInput: HTMLInputElement | null = document.querySelector('input[name="pizzaSize"]:checked');
+  const selectedSizeLabel: HTMLLabelElement | null = selectedSizeInput?.labels?.[0] || null;
+  const selectedSize: string = selectedSizeLabel?.textContent?.trim() || 'Not selected';
+  
+  const selectedToppingsInputs: NodeListOf<HTMLInputElement> | null = document.querySelectorAll('input[name="topping"]:checked');
+  const selectedToppings: string[] = Array.from(selectedToppingsInputs || [])
+    .map(topping => topping.value) 
+    .filter((topping): topping is string => typeof topping === 'string');
+
+  const selectedDeliveryInput: HTMLSelectElement | null = document.getElementById("select") as HTMLSelectElement | null;
+  const selectedDelivery: string = selectedDeliveryInput?.value || 'Not selected';
+
+  const selectedItemsDiv: HTMLElement | null = document.getElementById("selectedItems");
+  if (selectedItemsDiv) {
+    selectedItemsDiv.innerHTML = `
+      <h2>Your Order:</h2>
+      <p>Size: ${selectedSize}</p>
+      <p>Toppings: ${selectedToppings.length ? selectedToppings.join(", ") : "None"}</p>
+      <p>Delivery Method: ${selectedDelivery}</p>
+      <p>Total Cost: ${totalCost} €</p>`;
+  }
+  const displayContainer: HTMLElement | null = document.getElementById("displayContainer");
+if (displayContainer) {
+  displayContainer.style.display = "block";
+}
+}
+
+ if (submitBtn) {
+  submitBtn.addEventListener("click", handleSubmit);
+}
+
